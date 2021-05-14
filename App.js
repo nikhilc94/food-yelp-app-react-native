@@ -3,18 +3,24 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SearchScreen from './src/screens/SearchScreen';
+import Search from './src/screens/Search';
+import Result from './src/screens/Result';
 
 const { Navigator, Screen } = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Navigator>
+      <Navigator initialRouteName='Search'>
         <Screen
           name='Search'
-          component={SearchScreen}
+          component={Search}
           options={{ title: 'Business Search' }}
+        />
+        <Screen
+          name='Result'
+          component={Result}
+          options={{ title: 'Result' }}
         />
       </Navigator>
     </NavigationContainer>
